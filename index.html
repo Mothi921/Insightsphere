@@ -1,173 +1,279 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insightsphere</title>
+    <title>Insight Sphere</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter (for professional look) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        /* Custom styles for dark theme and accent color */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7fafc;
+            background-color: #0d1117; /* Deep Charcoal Background */
+            color: #ffffff;
         }
-        .prose-custom p {
-            margin-bottom: 1.5rem;
-            line-height: 1.75;
-            text-align: justify;
+        .header-bg {
+            background-color: #161b22; /* Slightly lighter dark for header/sections */
+        }
+        .accent-color {
+            color: #4a90e2; /* Professional blue accent */
+        }
+        .btn-primary {
+            background-color: #4a90e2;
+            color: #ffffff;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .btn-primary:hover {
+            background-color: #3b74b6;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .content-card {
+            /* Blue line on the left for visual hierarchy */
+            border-left: 3px solid #4a90e2; 
+        }
+        /* Style for content sections on mobile */
+        @media (max-width: 768px) {
+            .content-card {
+                border-left: none;
+                border-top: 3px solid #4a90e2;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900">
-                Insightsphere
-            </a>
-            <nav class="space-x-4 hidden md:flex">
-                <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">About Us</a>
-                <a href="#articles" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">Articles</a>
+    <!-- Navigation Header -->
+    <header class="header-bg sticky top-0 z-50 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Updated Website Name -->
+            <h1 class="text-3xl font-extrabold accent-color tracking-wider">Insight Sphere</h1>
+            <nav class="space-x-4 flex items-center">
+                <a href="#research" class="hidden sm:inline-block text-gray-300 hover:accent-color transition duration-150">Research</a>
+                <a href="#opeds" class="hidden sm:inline-block text-gray-300 hover:accent-color transition duration-150">Op-Eds</a>
+                <a href="#about" class="hidden sm:inline-block text-gray-300 hover:accent-color transition duration-150">About</a>
+                
+                <!-- SIGN UP BUTTON/LINK -->
+                <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="btn-primary px-4 py-2 rounded-lg font-semibold shadow-md ml-4 text-sm md:text-base">
+                    Join Our Member Network 🚀
+                </a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
-                </svg>
-            </button>
-        </div>
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-40 flex flex-col items-center justify-center space-y-8">
-            <a href="#about" class="text-white text-3xl font-bold hover:text-gray-300 transition-colors duration-300">About Us</a>
-            <a href="#articles" class="text-white text-3xl font-bold hover:text-gray-300 transition-colors duration-300">Articles</a>
-            <button id="close-menu-button" class="absolute top-4 right-4 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <main>
-        <section class="bg-gray-100 py-20 md:py-32">
-            <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-                    Insightsphere: Your Compass in the Evolving World of Finance and Consulting
-                </h1>
-                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-                    Exploring the trends shaping tomorrow's economy. Get expert analysis on fintech, AI, ESG, and strategic business transformation.
+    <section class="text-center py-24 px-4 bg-gray-900 border-b border-gray-700">
+        <h2 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Navigating the New Global Tectonics</h2>
+        <p class="text-xl text-gray-400 max-w-4xl mx-auto mt-4">
+            Deep analysis and actionable insights on the convergence of consulting, finance, and geopolitical trends that shape the future.
+        </p>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="py-16 px-4 header-bg border-b border-gray-800">
+        <div class="max-w-5xl mx-auto text-center">
+            <h3 class="text-3xl font-bold accent-color mb-10">Our Global Impact in Numbers</h3>
+            <div class="flex flex-wrap justify-around">
+                <div class="p-4 w-full sm:w-1/3">
+                    <p class="text-5xl font-extrabold accent-color">67%</p>
+                    <p class="text-gray-400 mt-2 text-lg">Average Shareability Rate</p>
+                </div>
+                <div class="p-4 w-full sm:w-1/3">
+                    <p class="text-5xl font-extrabold accent-color">3.4 min</p>
+                    <p class="text-gray-400 mt-2 text-lg">Minimum Average View Time</p>
+                </div>
+                <!-- UPDATED STATISTIC: Number of Members -->
+                <div class="p-4 w-full sm:w-1/3">
+                    <p class="text-5xl font-extrabold accent-color">200+</p>
+                    <p class="text-gray-400 mt-2 text-lg">Active Member Network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <!-- Research Papers (4 x ~1000 Words) -->
+        <section id="research" class="mb-20">
+            <h3 class="text-4xl font-extrabold accent-color mb-8 border-b border-gray-700 pb-3">In-Depth Research Papers</h3>
+            <p class="text-gray-400 mb-8">Our latest comprehensive reports, detailing long-term strategic insights across 1000-word analyses.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Research Paper 1 (Geopolitical/Tech) -->
+                <article class="content-card p-6 bg-gray-800 rounded-lg shadow-xl hover:bg-gray-700/50 transition">
+                    <h4 class="text-2xl font-bold mb-3 hover:accent-color cursor-pointer">The AI Sovereignty Race: How Nations are Re-Basing Tech Geopolitics</h4>
+                    <span class="text-sm font-semibold text-gray-500">Geopolitical Trends | 1000 Words</span>
+                    <p class="mt-4 text-gray-300">The rise of generative AI has transcended mere technological innovation to become a core pillar of national power. This paper explores the global push for AI self-sufficiency, focusing on the competitive strategies adopted by the US, China, and the EU. We analyze the impact of diverging regulatory frameworks, influencing everything from semiconductor supply chain resilience to cross-border data localization laws, and creating new challenges for multinational corporations navigating this fractured digital world order.</p>
+                </article>
+
+                <!-- Research Paper 2 (Finance/Emerging Markets) -->
+                <article class="content-card p-6 bg-gray-800 rounded-lg shadow-xl hover:bg-gray-700/50 transition">
+                    <h4 class="text-2xl font-bold mb-3 hover:accent-color cursor-pointer">Re-Engaging the 'Global South': New Investment Hubs and the Shifting Balance of Trade</h4>
+                    <span class="text-sm font-semibold text-gray-500">Finance & Consulting | 1000 Words</span>
+                    <p class="mt-4 text-gray-300">With persistent protectionism in traditional Western markets, the center of gravity for global trade is rapidly shifting toward the Global South, particularly India, Southeast Asia, and select African nations. This research investigates the financial mechanisms driving this shift, offering a deep dive into the financial instruments and consulting strategies required for market entry, focusing on macroeconomic stability and demographic dividends in these emerging economic dynamos.</p>
+                </article>
+
+                <!-- Research Paper 3 (Finance/Macroeconomics) -->
+                <article class="content-card p-6 bg-gray-800 rounded-lg shadow-xl hover:bg-gray-700/50 transition">
+                    <h4 class="text-2xl font-bold mb-3 hover:accent-color cursor-pointer">The Next Debt Crisis: Sovereign Risk and the Sustained Inflationary Environment of 2025</h4>
+                    <span class="text-sm font-semibold text-gray-500">Finance Trends | 1000 Words</span>
+                    <p class="mt-4 text-gray-300">Sovereign debt levels remain elevated globally, coinciding with a sustained inflationary environment and rising borrowing costs. This paper examines the fiscal policies of key developed and developing economies, assessing their vulnerability to a systemic sovereign debt crisis. The analysis focuses on the interplay of central bank tightening, populist spending policies, and a complex taxation landscape, offering scenario-planning for financial institutions.</p>
+                </article>
+
+                <!-- Research Paper 4 (Consulting/Geopolitics) -->
+                <article class="content-card p-6 bg-gray-800 rounded-lg shadow-xl hover:bg-gray-700/50 transition">
+                    <h4 class="text-2xl font-bold mb-3 hover:accent-color cursor-pointer">The Tariff Tsunami: Navigating Trump 2.0's Protectionist Agenda and Global Supply Chain Disruption</h4>
+                    <span class="text-sm font-semibold text-gray-500">Consulting & Geopolitics | 1000 Words</span>
+                    <p class="mt-4 text-gray-300">The return of the 'America First' trade policy, marked by broad-based tariffs and increasing protectionism, is forcing multinational corporations to radically rethink their sourcing and manufacturing strategies. This research provides a 1000-word framework for corporate resilience, analyzing the economic effects (inflationary pressures, cost increases) and the geopolitical drivers influencing trade routes, regional alliances, and the pivot to 'friendshoring' outside of traditional US-centric supply nodes.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Op-Eds (18 x ~500 Words) -->
+        <section id="opeds" class="mb-20">
+            <h3 class="text-4xl font-extrabold accent-color mb-8 border-b border-gray-700 pb-3">Opinion & Editorial (Op-Eds)</h3>
+            <p class="text-gray-400 mb-8">Timely, 500-word expert commentary on breaking news and critical issues.</p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <!-- Op-Ed 1 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The 'Geopolitical Recession': Why Collaboration is Giving Way to Transactional Diplomacy</h5>
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>
+                </article>
+
+                <!-- Op-Ed 2 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Automation Paradox: Why AI Governance Must Catch Up with Development Speed</h5>
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Tech</span>
+                </article>
+
+                <!-- Op-Ed 3 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Housing Crisis in Europe: The Political Timebomb of Financialized Real Estate</h5>
+                    <span class="text-xs font-semibold text-gray-500">Finance & Society</span>
+                </article>
+                
+                <!-- Op-Ed 4 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Beyond Ceasefire: The Elusive Path to Sustainable Peace in Ukraine and the Russian Factor</h5>
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>
+                </article>
+
+                <!-- Op-Ed 5 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">De-risking Supply Chains: Transparency is the New Diversification</h5>
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Supply Chain</span>
+                </article>
+
+                <!-- Op-Ed 6 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Populism and Taxation: Anticipating New Corporate and Asset Revenue Strategies</h5>
+                    <span class="text-xs font-semibold text-gray-500">Finance & Policy</span>
+                </article>
+
+                <!-- Op-Ed 7 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The India Factor: How the Global South is Rebalancing Asian Power Dynamics</h5>
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>
+                </article>
+                
+                <!-- Op-Ed 8 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Digital Sovereignty: Preparing Your IT Footprint for a Fragmented Digital World</h5>
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Tech</span>
+                </article>
+
+                <!-- Op-Ed 9 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The End of Cheap Money: Capital Allocation Challenges in a High Sovereign Yield Environment</h5>
+                    <span class="text-xs font-semibold text-gray-500">Finance</span>
+                </article>
+
+                <!-- Op-Ed 10 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Gaza and Sudan: Why the World Can No Longer Ignore Protracted Regional Conflicts</h5>
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>
+                </article>
+
+                <!-- Op-Ed 11 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Impact of Deepfakes: AI-Driven Misinformation in the Global Electoral Cycle</h5>
+                    <span class="text-xs font-semibold text-gray-500">Tech & Geopolitics</span>
+                </article>
+                
+                <!-- Op-Ed 12 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Demographic Time Bomb: Why Migration Policy is an Economic Imperative</h5>
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Demographics</span>
+                </article>
+
+                <!-- Op-Ed 13 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Navigating the Straits: Heightened Volatility in the Taiwan and Korean Peninsula Disputes</h5>
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>
+                </article>
+                
+                <!-- Op-Ed 14 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Climate Policy Conundrum: Balancing Green Mandates with Economic Competitiveness</h5>
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Sustainability</span>
+                </article>
+
+                <!-- Op-Ed 15 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Fintech and Regulation: The Rising Cost of Country-Specific Compliance</h5>
+                    <span class="text-xs font-semibold text-gray-500">Finance & Regulation</span>
+                </article>
+
+                <!-- Op-Ed 16 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Russia and Iran: Assessing the 'Fat-Tail' Risk of Vulnerable Regimes in the Middle East</h5>
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>
+                </article>
+                
+                <!-- Op-Ed 17 -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Cost of Division: How Government Gridlock Impacts Global Market Stability</h5>
+                    <span class="text-xs font-semibold text-gray-500">Finance & Policy</span>
+                </article>
+
+                <!-- Op-Ed 18 (Last Op-Ed) -->
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Space Economy: Astro-politics and the New Multipolar Race for Resource Claims</h5>
+                    <span class="text-xs font-semibold text-gray-500">Tech & Geopolitics</span>
+                </article>
+                
+            </div>
+        </section>
+        
+        <!-- About Section (New Requirement: 200 members) -->
+        <section id="about" class="py-16 px-4 bg-gray-900 border-t border-gray-700">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-4xl font-extrabold accent-color mb-6 text-center">About Insight Sphere</h3>
+                <p class="text-lg text-gray-400 leading-relaxed text-center">
+                    Insight Sphere is a leading non-partisan platform dedicated to delivering premium analysis at the intersection of global finance, strategic consulting, and complex geopolitical events. We bridge the gap between academic theory and actionable corporate strategy. With a global community of **over 200 members**, our contributors include former diplomats, C-suite executives, and specialized researchers, providing forward-looking perspectives essential for decision-makers in an increasingly volatile world.
                 </p>
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section id="about" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">About Us</h2>
-                <div class="text-gray-600 prose-custom">
-                    <p>Insightsphere was founded by <b>N B Mothi Krishna</b> with a single mission: to demystify the complex, rapidly changing landscapes of finance and consulting. In an era defined by technological disruption, shifting economic paradigms, and a renewed focus on sustainability, professionals and enthusiasts alike need a reliable source of grounded, forward-looking analysis. We are that source.</p>
-                    <p>Our team comprises seasoned analysts, industry veterans, and passionate writers dedicated to sifting through the noise to bring you the most critical trends and news. We believe that true insight comes not from simply reporting what's happening, but from understanding why it's happening and what it means for the future. From the transformative power of generative AI to the intricacies of new ESG regulations, we provide the context and strategic perspective you need to stay ahead.</p>
-                    <p>Insightsphere is more than just a blog; it’s a community of curious minds committed to lifelong learning and professional growth. We aim to spark conversation, challenge conventional wisdom, and empower our readers with the knowledge to make informed decisions. Welcome to your compass in a complex world. Welcome to Insightsphere.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Articles Section -->
-        <section id="articles" class="py-16 md:py-24 bg-gray-100">
-            <div class="container mx-auto px-4 max-w-5xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Latest Articles</h2>
-                <div class="space-y-16">
-
-                    <!-- Article 1 -->
-                    <article class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <img src="https://placehold.co/1200x600/F0F4F8/6B7280?text=AI+and+Finance" alt="A stylized representation of an AI brain with financial charts." class="w-full rounded-lg mb-6 shadow-md" />
-                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                            The Generative AI Revolution: How AI is Reshaping Financial Services from the Inside Out
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            Generative AI is no longer a futuristic concept; it's a present-day reality rapidly transforming the financial services industry. This article explores how firms are moving beyond simple automation to leverage AI for everything from risk management to personalized customer experiences.
-                        </p>
-                        <div class="prose-custom text-gray-700">
-                            <p>The financial world has always been at the forefront of technological adoption, from early mainframe computers processing transactions to the digital platforms that define modern banking. Yet, the current wave of innovation, driven by artificial intelligence (AI), particularly generative AI, is perhaps the most profound transformation the industry has seen in decades. This is not merely about digitizing old processes; it’s about fundamentally reshaping how financial services operate, interact with clients, and manage risk. The shift is from a reactive, human-centric model to a proactive, AI-augmented ecosystem.</p>
-                            <p>At its core, generative AI—the technology behind large language models and other creative AI tools—is about creating new content and insights, not just analyzing existing data. In finance, this has massive implications. For instance, in investment management, AI can now synthesize vast amounts of market data, news reports, and social sentiment in real-time to generate predictive models that would take a human analyst months to build. These models can identify nuanced patterns and correlations that are invisible to the naked eye, leading to more agile and informed trading decisions. This is democratizing sophisticated research, making it accessible to a broader range of investors and analysts.</p>
-                            <p>Beyond the trading floor, AI is revolutionizing risk management and fraud detection. Traditional fraud detection systems rely on pre-defined rules and heuristics. In contrast, AI systems use machine learning to analyze millions of transactions and identify new, previously unseen patterns of fraudulent behavior as they emerge. This allows financial institutions to detect and prevent sophisticated attacks with unprecedented speed and accuracy. In an era of increasingly complex cyber threats and financial crimes, AI acts as a digital immune system, constantly learning and adapting to protect assets and data.</p>
-                            <p>The customer experience is another area undergoing a radical overhaul. Gone are the days of rigid, frustrating chatbot interactions. Generative AI-powered virtual assistants can now engage in natural, human-like conversations, providing personalized financial advice, processing loan applications, and resolving complex inquiries without human intervention. This not only improves customer satisfaction but also frees up human advisors to focus on high-value, relationship-building activities. AI is enabling a level of personalization that was once impossible, tailoring financial products, investment advice, and even marketing messages to the unique needs and goals of each individual client.</p>
-                            <p>However, this revolution is not without its challenges. The ethical implications of AI are a major concern. Issues such as algorithmic bias, data privacy, and the lack of transparency in AI's decision-making processes—often referred to as the "black box" problem—must be carefully navigated. Regulators worldwide are grappling with how to govern AI in a way that fosters innovation while protecting consumers. The financial industry is taking this seriously, with firms establishing dedicated AI ethics committees and investing in explainable AI (XAI) technologies to ensure that AI's decisions can be audited and understood.</p>
-                            <p>The integration of AI also requires a significant shift in corporate culture and talent strategy. The future of finance will not be about humans versus machines, but rather humans and machines working in synergy. Financial professionals will need to develop new skills, such as AI literacy, data science, and ethical reasoning, to effectively collaborate with their new digital counterparts. Consulting firms are at the forefront of this shift, advising clients on how to structure their organizations, retrain their workforce, and implement AI solutions responsibly. They are helping to build the bridges between the technological possibilities and the practical business realities.</p>
-                            <p>Looking ahead, the potential of generative AI in finance is limitless. We are on the cusp of a new era of personalized, intelligent, and secure financial services. As the technology continues to mature and regulatory frameworks evolve, we will see AI embedded in every facet of the financial ecosystem, from automating routine back-office tasks to generating entirely new financial products. The firms that embrace this change with a clear strategy, a focus on ethical governance, and a commitment to upskilling their workforce will be the ones that thrive in the new, AI-driven economy. Insightsphere will continue to track these developments, providing the analysis you need to navigate this exciting and complex journey.</p>
-                        </div>
-                    </article>
-
-                    <!-- Article 2 -->
-                    <article class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <img src="https://placehold.co/1200x600/F0F4F8/6B7280?text=ESG+and+Consulting" alt="A depiction of three pillars labeled E, S, and G, supporting a stylized building." class="w-full rounded-lg mb-6 shadow-md" />
-                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                            ESG's New Chapter: How Consulting Firms Are Navigating the Shift from Compliance to Value Creation
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            ESG (Environmental, Social, and Governance) has evolved from a niche concern to a central tenet of corporate strategy. This article examines how consulting firms are advising companies to move beyond simple compliance and integrate ESG into their core operations for long-term value.
-                        </p>
-                        <div class="prose-custom text-gray-700">
-                            <p>For years, ESG was often treated as a checkbox exercise—a matter of producing a glossy sustainability report and meeting basic regulatory requirements. Today, that paradigm has shifted dramatically. ESG is no longer on the periphery; it has become a fundamental driver of corporate strategy, investor decisions, and consumer behavior. This transformation is driven by a confluence of factors: heightened regulatory scrutiny, a younger generation of investors and employees who demand purpose-driven business, and a growing recognition that strong ESG performance is a proxy for effective long-term risk management. In this new landscape, consulting firms are playing a crucial role, helping clients navigate the complexities and unlock genuine value from their ESG initiatives.</p>
-                            <p>The first major challenge for many companies is moving from a reactive, compliance-based approach to a proactive, strategic one. This requires a fundamental change in mindset. Instead of simply reporting on their carbon emissions, for example, companies are now being asked to build comprehensive decarbonization plans that are integrated into their supply chain, operations, and product development. Consulting firms are advising clients on this journey by providing a framework for strategic planning, helping them identify material ESG risks and opportunities, and developing a roadmap for implementation. This involves everything from conducting climate risk assessments to advising on sustainable supply chain practices and setting ambitious, yet achievable, net-zero targets.</p>
-                            <p>Another key area of focus is the "S" in ESG—the social component. This includes everything from labor practices and diversity, equity, and inclusion (DEI) to community engagement. The pandemic and subsequent social movements have highlighted the importance of a company's social license to operate. Consulting firms are helping clients build robust social governance frameworks, measure and report on key social metrics, and develop strategies to foster an inclusive and equitable workplace. This is not just about doing good; it's about building a resilient, engaged workforce that can drive long-term growth. From a risk perspective, poor social performance can lead to reputational damage, talent drain, and regulatory penalties. Consulting firms are helping clients turn this risk into an opportunity to build trust with stakeholders.</p>
-                            <p>The "G" for governance is the backbone of any effective ESG strategy. Strong governance ensures that ESG principles are not just a marketing gimmick but are deeply embedded in the company's culture and decision-making processes. Consulting firms are advising boards and executive teams on how to integrate ESG oversight into their corporate governance structures, link executive compensation to ESG performance metrics, and enhance transparency through robust reporting. This is a critical step in building investor confidence and ensuring that ESG commitments are not empty promises. The rise of new regulatory frameworks, such as the SEC's climate-related disclosure rules, makes this focus on governance more critical than ever.</p>
-                            <p>Technology is also a major enabler in the ESG consulting space. The sheer volume of data required for accurate ESG reporting is overwhelming, from carbon emissions to supply chain traceability and employee diversity metrics. Consulting firms are leveraging advanced data analytics and AI to help clients automate data collection, build comprehensive dashboards for tracking progress, and identify areas for improvement. This allows companies to move beyond manual, time-consuming processes and gain real-time, actionable insights into their ESG performance. The use of technology is also crucial for external reporting, providing the verifiable, auditable data that investors and regulators are now demanding.</p>
-                            <p>In a world where "greenwashing" is a significant reputational risk, the role of ESG consulting is becoming increasingly vital. It is about helping companies demonstrate genuine, measurable progress and communicate their story with authenticity. The firms that can do this effectively will not only comply with new regulations but also unlock new avenues for growth, attract top talent, and build enduring value. As the ESG landscape continues to evolve, Insightsphere will provide ongoing analysis to help you understand the nuances and opportunities in this critical field.</p>
-                        </div>
-                    </article>
-
-                    <!-- Article 3 -->
-                    <article class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                        <img src="https://placehold.co/1200x600/F0F4F8/6B7280?text=Global+Economics+Trends" alt="An image showing global market charts and a stylized world map." class="w-full rounded-lg mb-6 shadow-md" />
-                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                            Navigating a Fractured World: Key Economic Trends and the Rise of Emerging Markets
-                        </h3>
-                        <p class="text-gray-600 mb-6">
-                            The global economy is facing unprecedented headwinds, from trade fragmentation to persistent inflation. This article analyzes the major shifts highlighted by recent reports and discusses why emerging markets are poised to become the new engines of global growth.
-                        </p>
-                        <div class="prose-custom text-gray-700">
-                            <p>The era of a seamlessly integrated global economy, characterized by free trade and predictable growth, appears to be drawing to a close. According to recent reports from the World Economic Forum and other major institutions, the world is entering a new phase defined by systemic disruption and fragmentation. Intensifying trade disputes, rising geopolitical tensions, and accelerating technological change are creating a turbulent environment. While this presents significant challenges for traditional economic powerhouses, it also creates an immense opportunity for emerging markets that are proving to be more resilient and agile in this new landscape.</p>
-                            <p>One of the most striking trends is the widening divergence between advanced and developing economies. Reports suggest that a majority of chief economists anticipate global growth to weaken in the coming years, with a particularly subdued outlook for the US and Europe. In contrast, emerging markets—particularly those in South Asia and the Middle East—are identified as the key growth engines. This shift is not accidental; it is the result of strategic policy choices, robust domestic demand, and a growing confidence in local economies. India, for example, is projected to remain the fastest-growing major economy, buoyed by strong infrastructure development, a young population, and proactive fiscal policies.</p>
-                            <p>The fragmentation of global trade is a significant headwind. The imposition of tariffs and a move towards "friend-shoring" are reshaping supply chains and forcing companies to rethink their global strategies. This is creating a dual challenge for businesses: on one hand, they must navigate a complex web of new trade barriers; on the other, they must invest in building more resilient and localized supply chains. This is a prime area for consulting intervention, as firms are needed to advise on everything from geopolitical risk assessment to supply chain optimization. The firms that can help clients adapt to this new, more complex trade environment will be highly sought after.</p>
-                            <p>Inflation, while moderating in many parts of the world, remains a persistent concern. The past few years have shown that inflation is not a temporary phenomenon but a structural challenge driven by a mix of supply-side constraints and demand-side pressures. This has forced central banks to maintain a cautious stance, with many analysts anticipating little change in monetary policy in the near term. For businesses, this means a continued focus on cost optimization and a need for agile pricing strategies. The consulting industry is responding by offering services that help clients identify efficiencies, manage rising input costs, and build a more resilient financial footing in a high-inflation environment.</p>
-                            <p>Technological change, particularly the rise of AI, is a double-edged sword. While it is a key driver of efficiency and innovation, it also contributes to the systemic disruption felt across industries. The automation of routine tasks and the demand for new, specialized skills are reshaping labor markets. This creates a "skills gap" that businesses must address to remain competitive. Consultants are at the forefront of this, advising clients on talent acquisition, reskilling programs, and organizational restructuring to harness the power of AI while mitigating its disruptive effects.</p>
-                            <p>In this fractured world, the winners will be those who can adapt quickly and strategically. This means a move away from a reliance on established markets and a willingness to explore new opportunities in emerging economies. It also means investing in technology and talent to build a more resilient and agile organization. For financial and consulting professionals, understanding these macro-level shifts is crucial. Insightsphere is committed to providing you with the comprehensive analysis you need to make sense of these trends and position yourself for success in the economy of tomorrow.</p>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
     </main>
-
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Insightsphere. All rights reserved.</p>
+    
+    <!-- Footer -->
+    <footer class="header-bg py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>&copy; 2025 Insight Sphere. All rights reserved.</p>
+            <div class="mt-4 space-x-4 text-sm">
+                <a href="#about" class="hover:accent-color transition">Contact</a>
+                <a href="#" class="hover:accent-color transition">Privacy Policy</a>
+                <a href="#" class="hover:accent-color transition">Terms of Use</a>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuButton = document.getElementById('close-menu-button');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-
-        closeMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-
-        // Hide mobile menu on link click
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
 </body>
 </html>
