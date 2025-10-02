@@ -3,148 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insight Sphere: Finance & Consulting Insights</title>
+    <title>Insight Sphere</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        /* Base Theme Colors: Dark Blue/Grey (McKinsey Inspired) */
-        :root {
-            --color-primary: #1e3a8a; /* Dark Blue */
-            --color-secondary: #0f172a; /* Slate/Navy */
-            --color-accent: #fcd34d;  /* Yellow/Gold Accent */
-            --color-text: #e2e8f0;    /* Light Gray Text */
-            --color-surface: #ffffff; /* White for Papers */
-        }
-
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e2e8f0;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--color-primary);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #101e4a;
-        }
-        /* Custom class for links and accents */
-        .article-content a {
-            color: var(--color-primary);
-            text-decoration: underline;
+        /* Custom styles for dark theme and accent color */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Deep Charcoal Background */
+            color: #ffffff;
         }
         .header-bg {
-            background-color: var(--color-secondary);
+            background-color: #161b22; /* Slightly lighter dark for header/sections */
+        }
+        .accent-color {
+            color: #4a90e2; /* Professional blue accent */
+        }
+        .btn-primary {
+            background-color: #4a90e2;
+            color: #ffffff;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .btn-primary:hover {
+            background-color: #3b74b6;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .content-card {
+            /* Blue line on the left for visual hierarchy */
+            border-left: 3px solid #4a90e2;         
+        }
+        /* Style for content sections on mobile */
+        @media (max-width: 768px) {
+            .content-card {
+                border-left: none;
+                border-top: 3px solid #4a90e2;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-100 font-sans antialiased">
-
-    <nav class="sticky top-0 z-50 bg-white shadow-lg border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="#" class="text-2xl font-bold text-gray-900 tracking-wider uppercase">
-                    Insight Sphere
-                </a>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-900 hover:text-blue-900 transition duration-150 ease-in-out font-medium">Home</a>
-                    <a href="#insights" class="text-gray-900 hover:text-blue-900 transition duration-150 ease-in-out font-medium">Insights</a>
-                    <a href="#about" class="text-gray-900 hover:text-blue-900 transition duration-150 ease-in-out font-medium">About Us</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoAtfqHiqTxKrQK_9cV24nkGM6rz6gECBk1sS8-18hk7sIVA/viewform?usp=header" target="_blank" class="text-white bg-blue-900 px-4 py-2 rounded-lg shadow-md hover:bg-blue-800 transition duration-150 ease-in-out font-semibold">
-                        Submit Insights
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <header id="home" class="header-bg text-white py-24 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-extrabold tracking-tight sm:text-6xl text-gray-100">
-                Illuminating Tomorrow's Markets
-            </h1>
-            <p class="mt-4 text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto">
-                Your nexus for cutting-edge finance, investment, and consulting trends.
-            </p>
-            <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="#insights" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-lg shadow-xl text-blue-900 bg-white hover:bg-gray-100 transition duration-150 ease-in-out">
-                    Explore Latest Insights
-                </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoAtfqHiqTxKrQK_9cV24nkGM6rz6gECBk1sS8-18hk7sIVA/viewform?usp=header" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-blue-200 text-base font-semibold rounded-lg shadow-xl text-white bg-blue-700 hover:bg-blue-800 transition duration-150 ease-in-out">
-                    Contact & Submit Insights
-                </a>
-            </div>
-        </div>
+<body>
+    <header class="header-bg sticky top-0 z-50 shadow-xl">        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">            
+            <h1 class="text-3xl font-extrabold accent-color tracking-wider">Insight Sphere</h1>            
+            <nav class="space-x-4 flex items-center">                
+                <a href="#research" class="hidden sm:inline-block text-gray-300 hover:accent-color transition duration-150">Research</a>                
+                <a href="#opeds" class="hidden sm:inline-block text-gray-300 hover:accent-color transition duration-150">Op-Eds</a>                
+                <a href="#about" class="hidden sm:inline-block text-gray-300 hover:accent-color transition duration-150">About</a>                                
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoAtfqHiqTxKrQK_9cV24nkGM6rz6gECBk1sS8-18hk7sIVA/viewform?usp=header" target="_blank" class="btn-primary px-4 py-2 rounded-lg font-semibold shadow-md ml-4 text-sm md:text-base">                    
+                    Join Our Member Network 🚀                
+                </a>            
+            </nav>        
+        </div>    
     </header>
 
-    <main class="py-16">
-        <section id="insights" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-gray-900 mb-12 border-b-4 border-blue-900 pb-3">Latest Research & Op-Eds (24 Total)</h2>
+    <section class="text-center py-24 px-4 bg-gray-900 border-b border-gray-700">        
+        <h2 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Navigating the New Global Tectonics</h2>        
+        <p class="text-xl text-gray-400 max-w-4xl mx-auto mt-4">            
+            Deep analysis and actionable insights on the convergence of consulting, finance, and geopolitical trends that shape the future.        
+        </p>    
+    </section>
 
-            <div class="bg-blue-50 p-6 mb-12 rounded-xl shadow-inner border-l-4 border-blue-600">
-                <h4 class="text-2xl font-bold text-blue-800 mb-4">Community Engagement Metrics (Simulated)</h4>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-                    <div>
-                        <p class="text-4xl font-extrabold text-blue-900">200+</p>
-                        <p class="text-sm font-semibold text-gray-700 mt-1">Active Members</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-extrabold text-blue-900">8%</p>
-                        <p class="text-sm font-semibold text-gray-700 mt-1">Shareability Rate</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-extrabold text-blue-900">2:45</p>
-                        <p class="text-sm font-semibold text-gray-700 mt-1">Avg. View Time (Min:Sec)</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl font-extrabold text-blue-900">24</p>
-                        <p class="text-sm font-semibold text-gray-700 mt-1">Papers & Op-Eds</p>
-                    </div>
-                </div>
-            </div>
+    <section id="statistics" class="py-16 px-4 header-bg border-b border-gray-800">        
+        <div class="max-w-5xl mx-auto text-center">            
+            <h3 class="text-3xl font-bold accent-color mb-10">Our Global Impact in Numbers</h3>            
+            <div class="flex flex-wrap justify-around">                
+                <div class="p-4 w-full sm:w-1/3">                    
+                    <p class="text-5xl font-extrabold accent-color">67%</p>                    
+                    <p class="text-gray-400 mt-2 text-lg">Average Shareability Rate</p>                
+                </div>                
+                <div class="p-4 w-full sm:w-1/3">                    
+                    <p class="text-5xl font-extrabold accent-color">3.4 min</p>                    
+                    <p class="text-gray-400 mt-2 text-lg">Minimum Average View Time</p>                
+                </div>                
+                <div class="p-4 w-full sm:w-1/3">                    
+                    <p class="text-5xl font-extrabold accent-color">200+</p>                    
+                    <p class="text-gray-400 mt-2 text-lg">Active Member Network</p>                
+                </div>            
+            </div>        
+        </div>    
+    </section>
 
-            <h3 class="text-3xl font-semibold text-gray-800 mb-8 border-b border-gray-300 pb-2">Research Papers (4)</h3>
-
-            <article id="article-lbo" class="bg-white p-8 mb-8 rounded-lg shadow-lg border-l-4 border-red-600">
-                <h4 class="text-2xl font-extrabold text-red-700 mb-3">
-                    Deep Dive: The $26 Billion+ Blackstone-Hilton LBO (2007)
-                </h4>
-                <p class="text-sm text-gray-500 mb-6">
-                    **Published: Sep 25, 2025** | **Category: Private Equity / LBO**
-                </p>
-                <div class="article-content text-gray-700 space-y-6 leading-relaxed">
-                    <p>The 2007 leveraged buyout (LBO) of Hilton Hotels Corporation by Blackstone Group for approximately $26 billion stands as a pivotal case study in private equity history—a testament to audacious deal-making, strategic restructuring, and remarkable long-term value creation. Executed just before the 2008 global financial crisis, the transaction was widely viewed as risky, yet it ultimately generated one of the most profitable private equity returns of all time, demonstrating Blackstone’s resilience and foresight.</p>
-                    <a href="#article-lbo" class="text-red-600 hover:text-red-800 font-medium block mt-2">Read Full Report...</a>
-                </div>
-            </article>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <article id="article-ai" class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600">
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">
-                        Generative AI's Shift: From Automation to Strategic Finance
-                    </h4>
-                    <p class="text-sm text-gray-500 mb-4">
-                        **Published: Sep 24, 2025** | **Category: FinTech / Technology**
-                    </p>
-                    <div class="article-content text-gray-700 text-sm space-y-4">
-                        <p>**The rise of Generative AI (GenAI) is fundamentally altering the landscape of financial services, moving far beyond simple process automation.** It is transforming core functions—from customized investment advice to sophisticated risk modeling...</p>
-                        <a href="#article-ai" class="text-blue-900 hover:text-blue-800 font-medium block mt-2">Read More...</a>
-                    </div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <section id="research" class="mb-20">            
+            <h3 class="text-4xl font-extrabold accent-color mb-8 border-b border-gray-700 pb-3">In-Depth Research Papers</h3>            
+            <p class="text-gray-400 mb-8">Our latest comprehensive reports, detailing long-term strategic insights across 1000-word analyses.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">                
+                <article class="content-card p-6 bg-gray-800 rounded-lg shadow-xl hover:bg-gray-700/50 transition">                    
+                    <h4 class="text-2xl font-bold mb-3 hover:accent-color cursor-pointer">The AI Sovereignty Race: How Nations are Re-Basing Tech Geopolitics</h4>                    
+                    <span class="text-sm font-semibold text-gray-500">Geopolitical Trends | 1000 Words</span>                    
+                    <p class="mt-4 text-gray-300">The rise of generative AI has transcended mere technological innovation to become a core pillar of national power. This paper explores the global push for AI self-sufficiency, focusing on the competitive strategies adopted by the US, China, and the EU. We analyze the impact of diverging regulatory frameworks, influencing everything from semiconductor supply chain resilience to cross-border data localization laws, and creating new challenges for multinational corporations navigating this fractured digital world order.</p>                
                 </article>
 
-                <article id="article-esg" class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-600">
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">
-                        ESG Strategy: From Compliance Checklist to Value Driver
-                    </h4>
-                    <p class="text-sm text-gray-500 mb-4">
-                        **Published: Sep 24, 2025** | **Category: Consulting / Sustainability**
-                    </p>
-                    <div class="article-content text-gray-700 text-sm space-y-4">
-                        <p>**Environmental, Social, and Governance (ESG) principles are no longer merely a reporting requirement but a fundamental lever for value creation and risk mitigation in global business.** Consulting's role has evolved from helping clients tick compliance boxes...</p>
-                        <a href="#article-esg" class="text-green-600 hover:text-green-800 font-medium block mt-2">Read More...</a>
-                    </div>
+                <article class="content-card p-6 bg-gray-800 rounded-lg shadow-xl hover:bg-gray-700/50 transition">                    
+                    <h4 class="text-2xl font-bold mb-3 hover:accent-color cursor-pointer">Re-Engaging the 'Global South': New Investment Hubs and the Shifting Balance of Trade</h4>                    
+                    <span class="text-sm font-semibold text-gray-500">Finance & Consulting | 1000 Words</span>                    
+                    <p class="mt-4 text-gray-300">With persistent protectionism in traditional Western markets, the center of gravity for global trade is rapidly shifting toward the Global South, particularly India, Southeast Asia, and select African nations. This research investigates the financial mechanisms driving this shift, offering a deep dive into the financial instruments and consulting strategies required for market entry, focusing on macroeconomic stability and demographic dividends in these emerging economic dynamos.</p>                
                 </article>
 
-                <article id="article
+                <article class="content-card p-6 bg-gray-800 rounded-lg shadow-xl hover:bg-gray-700/50 transition">                    
+                    <h4 class="text-2xl font-bold mb-3 hover:accent-color cursor-pointer">The Next Debt Crisis: Sovereign Risk and the Sustained Inflationary Environment of 2025</h4>                    
+                    <span class="text-sm font-semibold text-gray-500">Finance Trends | 1000 Words</span>                    
+                    <p class="mt-4 text-gray-300">Sovereign debt levels remain elevated globally, coinciding with a sustained inflationary environment and rising borrowing costs. This paper examines the fiscal policies of key developed and developing economies, assessing their vulnerability to a systemic sovereign debt crisis. The analysis focuses on the interplay of central bank tightening, populist spending policies, and a complex taxation landscape, offering scenario-planning for financial institutions.</p>                
+                </article>
+
+                <article class="content-card p-6 bg-gray-800 rounded-lg shadow-xl hover:bg-gray-700/50 transition">                    
+                    <h4 class="text-2xl font-bold mb-3 hover:accent-color cursor-pointer">The Tariff Tsunami: Navigating Trump 2.0's Protectionist Agenda and Global Supply Chain Disruption</h4>                    
+                    <span class="text-sm font-semibold text-gray-500">Consulting & Geopolitics | 1000 Words</span>                    
+                    <p class="mt-4 text-gray-300">The return of the 'America First' trade policy, marked by broad-based tariffs and increasing protectionism, is forcing multinational corporations to radically rethink their sourcing and manufacturing strategies. This research provides a 1000-word framework for corporate resilience, analyzing the economic effects (inflationary pressures, cost increases) and the geopolitical drivers influencing trade routes, regional alliances, and the pivot to 'friendshoring' outside of traditional US-centric supply nodes.</p>                
+                </article>            
+            </div>        
+        </section>
+
+        <section id="opeds" class="mb-20">            
+            <h3 class="text-4xl font-extrabold accent-color mb-8 border-b border-gray-700 pb-3">Opinion & Editorial (Op-Eds)</h3>            
+            <p class="text-gray-400 mb-8">Timely, 500-word expert commentary on breaking news and critical issues.</p>
+            
+            <div class="grid md:grid-cols-3 gap-6">                                
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The 'Geopolitical Recession': Why Collaboration is Giving Way to Transactional Diplomacy</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Automation Paradox: Why AI Governance Must Catch Up with Development Speed</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Tech</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Housing Crisis in Europe: The Political Timebomb of Financialized Real Estate</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Finance & Society</span>                
+                </article>                                
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Beyond Ceasefire: The Elusive Path to Sustainable Peace in Ukraine and the Russian Factor</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">De-risking Supply Chains: Transparency is the New Diversification</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Supply Chain</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Populism and Taxation: Anticipating New Corporate and Asset Revenue Strategies</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Finance & Policy</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The India Factor: How the Global South is Rebalancing Asian Power Dynamics</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>                
+                </article>                                
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Digital Sovereignty: Preparing Your IT Footprint for a Fragmented Digital World</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Tech</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The End of Cheap Money: Capital Allocation Challenges in a High Sovereign Yield Environment</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Finance</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Gaza and Sudan: Why the World Can No Longer Ignore Protracted Regional Conflicts</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Impact of Deepfakes: AI-Driven Misinformation in the Global Electoral Cycle</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Tech & Geopolitics</span>                
+                </article>                                
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Demographic Time Bomb: Why Migration Policy is an Economic Imperative</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Demographics</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Navigating the Straits: Heightened Volatility in the Taiwan and Korean Peninsula Disputes</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>                
+                </article>                                
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Climate Policy Conundrum: Balancing Green Mandates with Economic Competitiveness</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Consulting & Sustainability</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Fintech and Regulation: The Rising Cost of Country-Specific Compliance</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Finance & Regulation</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">Russia and Iran: Assessing the 'Fat-Tail' Risk of Vulnerable Regimes in the Middle East</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Geopolitics</span>                
+                </article>                                
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Cost of Division: How Government Gridlock Impacts Global Market Stability</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Finance & Policy</span>                
+                </article>
+
+                <article class="p-5 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition">                    
+                    <h5 class="text-lg font-bold mb-1 hover:accent-color cursor-pointer">The Space Economy: Astro-politics and the New Multipolar Race for Resource Claims</h5>                    
+                    <span class="text-xs font-semibold text-gray-500">Tech & Geopolitics</span>                
+                </article>                            
+            </div>        
+        </section>
+
+        <section id="about" class="py-16 px-4 bg-gray-900 border-t border-gray-700">            
+            <div class="max-w-4xl mx-auto">                
+                <h3 class="text-4xl font-extrabold accent-color mb-6 text-center">About Insight Sphere</h3>                
+                <p class="text-lg text-gray-400 leading-relaxed text-center">                    
+                    Insight Sphere is a leading non-partisan platform dedicated to delivering premium analysis at the intersection of global finance, strategic consulting, and complex geopolitical events. We bridge the gap between academic theory and actionable corporate strategy. With a global community of **over 200 members**, our contributors include former diplomats, C-suite executives, and specialized researchers, providing forward-looking perspectives essential for decision-makers in an increasingly volatile world.                
+                </p>            
+            </div>        
+        </section>
+    </main>
+
+    <footer class="header-bg py-8 border-t border-gray-800">        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">            
+            <p>&copy; 2025 Insight Sphere. All rights reserved.</p>            
+            <div class="mt-4 space-x-4 text-sm">                
+                <a href="#about" class="hover:accent-color transition">Contact</a>                
+                <a href="#" class="hover:accent-color transition">Privacy Policy</a>                
+                <a href="#" class="hover:accent-color transition">Terms of Use</a>            
+            </div>        
+        </div>    
+    </footer>
+</body>
+</html>
