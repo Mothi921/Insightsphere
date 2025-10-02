@@ -6,44 +6,52 @@
     <title>Insight Sphere: Finance & Consulting Insights</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Base Theme Colors: Dark Blue/Grey (McKinsey Inspired) */
+        :root {
+            --color-primary: #1e3a8a; /* Dark Blue */
+            --color-secondary: #0f172a; /* Slate/Navy */
+            --color-accent: #fcd34d;  /* Yellow/Gold Accent */
+            --color-text: #e2e8f0;    /* Light Gray Text */
+            --color-surface: #ffffff; /* White for Papers */
+        }
+
         /* Custom scrollbar for a cleaner look */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #e2e8f0;
         }
         ::-webkit-scrollbar-thumb {
-            background: #a0a0a0;
+            background: var(--color-primary);
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+            background: #101e4a;
         }
-        /* Custom class for links */
+        /* Custom class for links and accents */
         .article-content a {
-            color: #1c64f2;
+            color: var(--color-primary);
             text-decoration: underline;
         }
-        /* Gradient for a more polished header */
-        .header-gradient {
-            background-image: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+        .header-bg {
+            background-color: var(--color-secondary);
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans antialiased">
+<body class="bg-gray-100 font-sans antialiased">
 
-    <nav class="sticky top-0 z-50 bg-white shadow-lg">
+    <nav class="sticky top-0 z-50 bg-white shadow-lg border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="#" class="text-2xl font-bold text-gray-900 tracking-wider uppercase">
                     Insight Sphere
                 </a>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-900 hover:text-indigo-600 transition duration-150 ease-in-out font-medium">Home</a>
-                    <a href="#insights" class="text-gray-900 hover:text-indigo-600 transition duration-150 ease-in-out font-medium">Insights</a>
-                    <a href="#about" class="text-gray-900 hover:text-indigo-600 transition duration-150 ease-in-out font-medium">About Us</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoAtfqHiqTxKrQK_9cV24nkGM6rz6gECBk1sS8-18hk7sIVA/viewform?usp=header" target="_blank" class="text-white bg-indigo-600 px-4 py-2 rounded-lg shadow-md hover:bg-indigo-700 transition duration-150 ease-in-out font-semibold">
+                    <a href="#home" class="text-gray-900 hover:text-blue-900 transition duration-150 ease-in-out font-medium">Home</a>
+                    <a href="#insights" class="text-gray-900 hover:text-blue-900 transition duration-150 ease-in-out font-medium">Insights</a>
+                    <a href="#about" class="text-gray-900 hover:text-blue-900 transition duration-150 ease-in-out font-medium">About Us</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoAtfqHiqTxKrQK_9cV24nkGM6rz6gECBk1sS8-18hk7sIVA/viewform?usp=header" target="_blank" class="text-white bg-blue-900 px-4 py-2 rounded-lg shadow-md hover:bg-blue-800 transition duration-150 ease-in-out font-semibold">
                         Submit Insights
                     </a>
                 </div>
@@ -51,19 +59,19 @@
         </div>
     </nav>
 
-    <header id="home" class="header-gradient text-white py-24 shadow-2xl">
+    <header id="home" class="header-bg text-white py-24 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-extrabold tracking-tight sm:text-6xl">
+            <h1 class="text-5xl font-extrabold tracking-tight sm:text-6xl text-gray-100">
                 Illuminating Tomorrow's Markets
             </h1>
-            <p class="mt-4 text-xl sm:text-2xl opacity-90 max-w-3xl mx-auto">
+            <p class="mt-4 text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto">
                 Your nexus for cutting-edge finance, investment, and consulting trends.
             </p>
             <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <a href="#insights" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-lg shadow-xl text-indigo-700 bg-white hover:bg-gray-100 transition duration-150 ease-in-out">
+                <a href="#insights" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-semibold rounded-lg shadow-xl text-blue-900 bg-white hover:bg-gray-100 transition duration-150 ease-in-out">
                     Explore Latest Insights
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoAtfqHiqTxKrQK_9cV24nkGM6rz6gECBk1sS8-18hk7sIVA/viewform?usp=header" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-indigo-200 text-base font-semibold rounded-lg shadow-xl text-white bg-indigo-600 hover:bg-indigo-800 transition duration-150 ease-in-out">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoAtfqHiqTxKrQK_9cV24nkGM6rz6gECBk1sS8-18hk7sIVA/viewform?usp=header" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-blue-200 text-base font-semibold rounded-lg shadow-xl text-white bg-blue-700 hover:bg-blue-800 transition duration-150 ease-in-out">
                     Contact & Submit Insights
                 </a>
             </div>
@@ -72,25 +80,25 @@
 
     <main class="py-16">
         <section id="insights" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-gray-900 mb-12 border-b-4 border-indigo-600 pb-3">Latest Research & Op-Eds (24 Total)</h2>
+            <h2 class="text-4xl font-bold text-gray-900 mb-12 border-b-4 border-blue-900 pb-3">Latest Research & Op-Eds (24 Total)</h2>
 
-            <div class="bg-indigo-50 p-6 mb-12 rounded-xl shadow-inner border-l-4 border-indigo-400">
-                <h4 class="text-2xl font-bold text-indigo-800 mb-4">Community Engagement Metrics (Simulated)</h4>
+            <div class="bg-blue-50 p-6 mb-12 rounded-xl shadow-inner border-l-4 border-blue-600">
+                <h4 class="text-2xl font-bold text-blue-800 mb-4">Community Engagement Metrics (Simulated)</h4>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
                     <div>
-                        <p class="text-4xl font-extrabold text-indigo-600">200+</p>
+                        <p class="text-4xl font-extrabold text-blue-900">200+</p>
                         <p class="text-sm font-semibold text-gray-700 mt-1">Active Members</p>
                     </div>
                     <div>
-                        <p class="text-4xl font-extrabold text-indigo-600">8%</p>
+                        <p class="text-4xl font-extrabold text-blue-900">8%</p>
                         <p class="text-sm font-semibold text-gray-700 mt-1">Shareability Rate</p>
                     </div>
                     <div>
-                        <p class="text-4xl font-extrabold text-indigo-600">2:45</p>
+                        <p class="text-4xl font-extrabold text-blue-900">2:45</p>
                         <p class="text-sm font-semibold text-gray-700 mt-1">Avg. View Time (Min:Sec)</p>
                     </div>
                     <div>
-                        <p class="text-4xl font-extrabold text-indigo-600">24</p>
+                        <p class="text-4xl font-extrabold text-blue-900">24</p>
                         <p class="text-sm font-semibold text-gray-700 mt-1">Papers & Op-Eds</p>
                     </div>
                 </div>
@@ -98,7 +106,7 @@
 
             <h3 class="text-3xl font-semibold text-gray-800 mb-8 border-b border-gray-300 pb-2">Research Papers (4)</h3>
 
-            <article id="article-lbo" class="bg-white p-8 mb-8 rounded-lg shadow-lg border-l-4 border-red-500">
+            <article id="article-lbo" class="bg-white p-8 mb-8 rounded-lg shadow-lg border-l-4 border-red-600">
                 <h4 class="text-2xl font-extrabold text-red-700 mb-3">
                     Deep Dive: The $26 Billion+ Blackstone-Hilton LBO (2007)
                 </h4>
@@ -106,135 +114,4 @@
                     **Published: Sep 25, 2025** | **Category: Private Equity / LBO**
                 </p>
                 <div class="article-content text-gray-700 space-y-6 leading-relaxed">
-                    <p>The 2007 leveraged buyout (LBO) of Hilton Hotels Corporation by Blackstone Group for approximately $26 billion stands as a pivotal case study in private equity history—a testament to audacious deal-making, strategic restructuring, and remarkable long-term value creation. Executed just before the 2008 global financial crisis, the transaction was widely viewed as risky, yet it ultimately generated one of the most profitable private equity returns of all time, demonstrating Blackstone’s resilience and foresight.</p>
-                    <a href="#article-lbo" class="text-red-600 hover:text-red-800 font-medium block mt-2">Read Full Report...</a>
-                </div>
-            </article>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <article id="article-ai" class="bg-white p-6 rounded-lg shadow-md border-t-4 border-indigo-500">
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">
-                        Generative AI's Shift: From Automation to Strategic Finance
-                    </h4>
-                    <p class="text-sm text-gray-500 mb-4">
-                        **Published: Sep 24, 2025** | **Category: FinTech / Technology**
-                    </p>
-                    <div class="article-content text-gray-700 text-sm space-y-4">
-                        <p>**The rise of Generative AI (GenAI) is fundamentally altering the landscape of financial services, moving far beyond simple process automation.** It is transforming core functions—from customized investment advice to sophisticated risk modeling...</p>
-                        <a href="#article-ai" class="text-indigo-600 hover:text-indigo-800 font-medium block mt-2">Read More...</a>
-                    </div>
-                </article>
-
-                <article id="article-esg" class="bg-white p-6 rounded-lg shadow-md border-t-4 border-green-500">
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">
-                        ESG Strategy: From Compliance Checklist to Value Driver
-                    </h4>
-                    <p class="text-sm text-gray-500 mb-4">
-                        **Published: Sep 24, 2025** | **Category: Consulting / Sustainability**
-                    </p>
-                    <div class="article-content text-gray-700 text-sm space-y-4">
-                        <p>**Environmental, Social, and Governance (ESG) principles are no longer merely a reporting requirement but a fundamental lever for value creation and risk mitigation in global business.** Consulting's role has evolved from helping clients tick compliance boxes...</p>
-                        <a href="#article-esg" class="text-green-600 hover:text-green-800 font-medium block mt-2">Read More...</a>
-                    </div>
-                </article>
-
-                <article id="article-poly" class="bg-white p-6 rounded-lg shadow-md border-t-4 border-yellow-500">
-                    <h4 class="text-xl font-bold text-gray-900 mb-3">
-                        Navigating the Polycrisis: Inflation, Geopolitics, and Deglobalization
-                    </h4>
-                    <p class="text-sm text-gray-500 mb-4">
-                        **Published: Sep 24, 2025** | **Category: Global Economics**
-                    </p>
-                    <div class="article-content text-gray-700 text-sm space-y-4">
-                        <p>**The global economy is currently defined by a 'polycrisis'—the simultaneous interplay of high-and-persistent inflation, geopolitical fragmentation, and the reversal of decades of economic integration (deglobalization).** This complex environment necessitates a shift in corporate and financial strategy...</p>
-                        <a href="#article-poly" class="text-yellow-600 hover:text-yellow-800 font-medium block mt-2">Read More...</a>
-                    </div>
-                </article>
-            </div>
-            
-            <h3 class="text-3xl font-semibold text-gray-800 mt-12 mb-8 border-b border-gray-300 pb-2">Op-Eds (20)</h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <script>
-                    const opEdContent = `
-                        <p class="text-sm text-gray-500 mb-4">**Published: Oct 3, 2025** | **Category: Op-Ed**</p>
-                        <div class="article-content text-gray-700 text-sm space-y-2">
-                            <p>This Op-Ed explores emerging trends in global market strategy, highlighting key opportunities and risks in the current macro environment...</p>
-                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium block mt-2">Read More...</a>
-                        </div>
-                    `;
-                    const opEdArticles = document.getElementById('op-ed-articles');
-                    for (let i = 1; i <= 20; i++) {
-                        const article = document.createElement('article');
-                        article.id = `op-ed-${i}`;
-                        article.className = 'bg-white p-4 rounded-lg shadow-md border-t-2 border-gray-300 hover:shadow-lg transition duration-300';
-                        article.innerHTML = `<h4 class="text-base font-bold text-gray-900 mb-1">Op-Ed: Global Market Strategy (${i}/20)</h4>` + opEdContent;
-                        opEdArticles.appendChild(article);
-                    }
-                </script>
-                <div id="op-ed-articles" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 col-span-full">
-                    </div>
-            </div>
-            
-        </section>
-    </main>
-
-    <section id="about" class="bg-gray-100 py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 mb-8 border-b-4 border-indigo-600 pb-3">About Insight Sphere</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                <div class="lg:col-span-2 text-gray-700 space-y-6">
-                    <p>
-                        **Insight Sphere** was founded on the principle that superior decision-making is powered by superior analysis. In the complex, fast-moving worlds of finance, private equity, and management consulting, having access to timely, in-depth, and unbiased perspectives is paramount.
-                    </p>
-                    <p>
-                        Our mission is to bridge the gap between complex market movements and actionable strategy. We provide comprehensive reports, case studies (like the Blackstone-Hilton LBO), and forward-looking analysis on global economic trends, technological disruption (e.g., Generative AI), and the integration of sustainability (ESG) into corporate strategy.
-                    </p>
-                    <p class="font-semibold">
-                        We aim to be the first and final source for professionals seeking clarity in market volatility.
-                    </p>
-                </div>
-                <div class="lg:col-span-1 bg-white p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold text-gray-900 mb-4">Our Focus Areas</h4>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Private Equity & LBO Analysis</li>
-                        <li>FinTech and AI Integration</li>
-                        <li>ESG Strategy & Risk Management</li>
-                        <li>Global Macroeconomic Forecasting</li>
-                        <li>Management Consulting Methodologies</li>
-                    </ul>
-                    <div class="mt-8 pt-6 border-t border-gray-300">
-                        <p class="text-lg font-bold text-indigo-700">Community Size:</p>
-                        <p class="text-2xl font-extrabold text-gray-900">200+ Active Members</p>
-                        <p class="text-sm text-gray-500 mt-1">**(\*)** This represents users engaged in our research and discussion forums.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-12 pt-8 border-t border-gray-300 text-center">
-                <p class="text-lg font-bold text-gray-900">
-                    Founder: N B Mothi Krishna
-                </p>
-                <p class="text-sm text-gray-600">
-                    Driving a vision for analytical excellence and strategic clarity in a data-driven world.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-800 text-white py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-4">
-                <a href="#home" class="text-gray-300 hover:text-indigo-400">Home</a>
-                <a href="#insights" class="text-gray-300 hover:text-indigo-400">Insights</a>
-                <a href="#about" class="text-gray-300 hover:text-indigo-400">About</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoAtfqHiqTxKrQK_9cV24nkGM6rz6gECBk1sS8-18hk7sIVA/viewform?usp=header" target="_blank" class="text-indigo-400 hover:text-indigo-200">Submit an Article</a>
-            </div>
-            <p class="text-sm text-gray-500">
-                &copy; 2025 Insight Sphere. All rights reserved.
-            </p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <p>The 2007 leveraged buyout (LBO) of Hilton Hotels Corporation by Blackstone Group for approximately $26 billion stands as a pivotal case study in private equity history—a testament to audacious deal-making, strategic restructuring, and remarkable long-term value creation. Executed just before the 2
